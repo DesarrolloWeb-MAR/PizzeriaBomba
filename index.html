@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PI-ZZERIA BOMBA | El Sabor que Detona tu Paladar</title>
+    
+    <!-- Tailwind CSS para Estilos Modernos y Rápidos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Outfit (Elegante) y Rubik Mono One (Fuerte/Explosivo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0A0A0A',
+                        brandGray: '#121212',
+                        brandCard: '#1C1C1C',
+                        brandRed: '#FF3C00',
+                        brandYellow: '#FFB700',
+                        brandGreen: '#25D366'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        explosive: ['Rubik Mono One', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Suavizado global de transiciones */
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Giro decorativo continuo para el fondo del hero */
+        @keyframes continuous-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-continuous-spin {
+            animation: continuous-spin 30s linear infinite;
+        }
+
+        /* Animación de pulso térmico */
+        @keyframes fire-glow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 60, 0, 0.4)); }
+            50% { filter: drop-shadow(0 0 35px rgba(255, 183, 0, 0.7)); }
+        }
+        .animate-fire-glow {
+            animation: fire-glow 4s ease-in-out infinite;
+        }
+
+        /* Desactivar scrollbars para flujos limpios de UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brandDark text-white font-sans antialiased selection:bg-brandYellow selection:text-brandDark overflow-x-hidden">
+
+    <!-- HEADER & NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/90 backdrop-blur-md border-b border-brandRed/20 px-6 py-4 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-2">
+            <span class="font-explosive text-xl md:text-2xl text-brandRed tracking-tighter drop-shadow-[0_0_8px_rgba(255,60,0,0.6)]">
+                PI-ZZERIA <span class="text-brandYellow">BOMBA</span>
+            </span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-semibold text-sm uppercase tracking-wider">
+            <a href="#menu" class="hover:text-brandYellow transition-colors">Menú de Especialidades</a>
+            <a href="#tu-pedido" class="hover:text-brandYellow transition-colors flex items-center gap-1.5 relative">
+                <span class="inline-block w-2 h-2 rounded-full bg-brandRed animate-pulse"></span> Tu Pedido
+                <span id="nav-cart-badge" class="hidden bg-brandRed text-white text-[10px] px-1.5 py-0.5 rounded-full font-black">0</span>
+            </a>
+            <a href="#ubicacion" class="hover:text-brandYellow transition-colors">Búnker</a>
+        </nav>
+        <div class="flex items-center gap-3">
+            <a href="#tu-pedido" class="relative bg-brandCard border border-brandRed/30 hover:border-brandRed text-white p-2.5 rounded-xl md:hidden">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="mobile-cart-badge" class="hidden absolute -top-1.5 -right-1.5 bg-brandRed text-white text-[9px] px-1.5 py-0.5 rounded-full font-black">0</span>
+            </a>
+            <a href="https://wa.me/5493878232587?text=¡Hola!%20Quiero%20pedir%20la%20pizza%20más%20bomba." 
+               target="_blank" 
+               class="bg-brandGreen hover:bg-brandGreen/90 text-brandDark font-black px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm shadow-lg shadow-brandGreen/20 transform hover:scale-105 active:scale-95">
+                <i class="fab fa-whatsapp text-lg"></i>
+                <span class="hidden sm:inline">PIDE AL TOQUE</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden px-6">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brandRed/15 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brandYellow/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full py-12">
+            <!-- Textos del Hero -->
+            <div class="space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-brandRed/20 border border-brandRed/40 px-4 py-2 rounded-full text-brandYellow font-extrabold text-xs tracking-widest uppercase">
+                    <i class="fa-solid fa-fire animate-bounce"></i> ¡El sabor de Pichanal que rompe esquemas!
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-none uppercase">
+                    EL SABOR QUE <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandRed via-brandYellow to-brandRed font-explosive text-3xl sm:text-5xl lg:text-6xl block mt-2">
+                        DETONA!
+                    </span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Artesanales a la piedra, desbordantes de queso y con combinaciones explosivas que desafían la gravedad. Selecciona tu variedad preferida en tamaño entero o por mitades y realiza tu pedido al instante.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#menu" class="bg-brandRed hover:bg-brandRed/95 text-white font-black px-8 py-4 rounded-xl text-md tracking-wider uppercase shadow-xl shadow-brandRed/30 transform hover:scale-105 active:scale-95">
+                        Explorar Menú
+                    </a>
+                    <a href="#tu-pedido" class="bg-brandGray hover:bg-brandGray/80 border border-brandYellow/50 text-brandYellow font-bold px-8 py-4 rounded-xl text-md tracking-wider uppercase flex items-center gap-2 transform hover:scale-105 active:scale-95">
+                        <i class="fa-solid fa-cart-shopping"></i> Ver mi Pedido
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pizza Principal Interactiva -->
+            <div class="flex justify-center relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brandYellow/10 to-transparent rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                <div class="relative group cursor-pointer" onclick="detonateHeroPizza()">
+                    <div class="absolute inset-0 w-full h-full border border-dashed border-brandYellow/20 rounded-full animate-continuous-spin scale-110 pointer-events-none"></div>
+                    <img id="hero-pizza" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600" 
+                         alt="Pizza Bomba" 
+                         class="w-72 sm:w-96 md:w-[440px] h-72 sm:h-96 md:h-[440px] object-cover rounded-full border-4 border-brandRed shadow-2xl transition-transform duration-1000 ease-out transform group-hover:rotate-90 group-hover:scale-105 animate-fire-glow animate-pulse">
+                    <div class="absolute bottom-4 right-4 bg-brandYellow text-brandDark font-black font-explosive text-[10px] md:text-xs px-4 py-2.5 rounded-full -rotate-12 shadow-2xl border-2 border-brandDark select-none">
+                        🔥 ¡HAZ CLICK AQUÍ!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-24 bg-brandGray/40 relative border-t border-b border-brandRed/20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-3xl md:text-5xl font-black uppercase">Especialidades <span class="text-brandRed">BOMBA</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Elige entre una pizza entera o media pizza de cualquiera de nuestras variedades e infórmanos de tu pedido.</p>
+            </div>
+
+            <!-- Contenedor dinámico donde JS renderizará todas las tarjetas de pizzas -->
+            <div id="pizzas-menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Se rellena automáticamente vía JS con PIZZAS_CONFIG -->
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CART SECTION -->
+    <section id="tu-pedido" class="py-24 bg-brandDark relative px-6 overflow-hidden">
+        <div class="absolute top-1/2 right-0 w-80 h-80 bg-brandYellow/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-4 mb-12">
+                <div class="inline-block bg-brandYellow/15 border border-brandYellow/30 text-brandYellow font-black px-4 py-2 rounded-full text-xs uppercase tracking-widest">
+                    <i class="fa-solid fa-cart-shopping mr-1"></i> Pedido Actual en Tiempo Real
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black uppercase">RESUMEN DE TU <span class="text-brandYellow">DETONACIÓN</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    Revisa las pizzas seleccionadas, edita unidades o elimina items antes de confirmar tu pedido oficial.
+                </p>
+            </div>
+
+            <!-- Contenedor Principal del Carrito de Compras -->
+            <div class="bg-brandCard rounded-3xl border border-white/5 p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+                <!-- Items del Carrito -->
+                <div id="cart-items-container" class="space-y-4 max-h-[400px] overflow-y-auto pr-2 no-scrollbar">
+                    <!-- Relleno dinámico a través de script.js -->
+                </div>
+
+                <!-- Resumen y Acción de Envío a WhatsApp -->
+                <div id="cart-footer" class="hidden border-t border-white/10 mt-8 pt-6 space-y-6 animate-pulse">
+                    <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div class="text-center sm:text-left">
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">VARIEDAD EN TU MESA:</span>
+                            <span id="cart-total-qty" class="block text-lg font-black text-white">0 Items</span>
+                        </div>
+                        <div class="text-center sm:text-right">
+                            <span class="text-xs font-bold text-brandYellow uppercase tracking-widest">TOTAL A PAGAR ESTIMADO:</span>
+                            <span id="cart-total-price" class="block text-3xl font-black text-brandYellow font-mono tracking-tight">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <button onclick="clearCart()" class="w-full bg-brandDark/50 border border-brandRed hover:bg-brandRed/10 text-brandRed font-black py-4 rounded-xl uppercase tracking-wider transition-all text-xs active:scale-95">
+                            <i class="fa-solid fa-trash mr-1"></i> Vaciar Carrito
+                        </button>
+                        <button onclick="sendOrderViaWhatsApp()" class="w-full bg-brandGreen hover:bg-brandGreen/90 text-brandDark font-black py-4 rounded-xl flex items-center justify-center gap-2.5 tracking-wider uppercase shadow-lg shadow-brandGreen/25 transition-all transform active:scale-95 text-xs md:text-sm">
+                            <i class="fab fa-whatsapp text-lg"></i> ENVIAR PEDIDO POR WHATSAPP
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="ubicacion" class="py-24 bg-brandGray/40 relative px-6 border-t border-brandRed/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-brandYellow/15 border border-brandYellow/30 px-4 py-2 rounded-full text-brandYellow font-bold text-xs tracking-widest uppercase">
+                    <i class="fa-solid fa-map-location-dot"></i> Búnker de Sabor
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black uppercase">¡VISITA EL BUNKER EN <span class="text-brandRed">PICHANAL!</span></h2>
+                <p class="text-gray-400 leading-relaxed">
+                    Ven a retirar tus pizzas recién horneadas o disfruta de un ambiente inigualable en nuestro salón temático del norte argentino.
+                </p>
+                
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brandRed/10 p-3.5 rounded-xl border border-brandRed/30 text-brandRed">
+                            <i class="fa-solid fa-location-dot text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Dirección de Retiro</h4>
+                            <p class="text-gray-400 text-sm">Av. Belgrano esq. Balcarce, Pichanal, Argentina</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-brandYellow/10 p-3.5 rounded-xl border border-brandYellow/30 text-brandYellow">
+                            <i class="fa-solid fa-clock text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">Horarios de Atención</h4>
+                            <p class="text-gray-400 text-sm">Martes a Domingos de 19:00 a 01:00 hs (Viernes/Sábados hasta 02:00 hs)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="https://maps.google.com/?q=Av.+Belgrano+y+Balcarce,+Salta,+Argentina" target="_blank" 
+                       class="inline-flex items-center gap-2.5 bg-brandYellow hover:bg-brandYellow/90 text-brandDark font-black px-6 py-3.5 rounded-xl text-sm tracking-wider uppercase shadow-lg shadow-brandYellow/10 transition-all transform hover:scale-105 active:scale-95">
+                        <i class="fa-solid fa-route text-lg"></i> CÓMO LLEGAR EN GOOGLE MAPS
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-brandRed/30 shadow-[0_0_40px_rgba(255,60,0,0.15)] h-[400px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.3854131580235!2d-65.41243742465983!3d-24.782245311815307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3b0a2948dbd%3A0xc6cb1c7df5d45ebf!2sAv.%20Belgrano%20%26%20Balcarce%2C%20Salta!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brandDark border-t border-white/5 py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            
+            <div class="text-center md:text-left space-y-2">
+                <span class="font-explosive text-lg text-brandRed tracking-tighter">PI-ZZERIA <span class="text-brandYellow">BOMBA</span></span>
+                <p class="text-gray-500 text-sm">&copy; 2026 PI-ZZERIA BOMBA. Todos los derechos reservados.</p>
+            </div>
+
+            <!-- Botones de Redes Sociales -->
+            <div class="flex items-center gap-4">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="w-12 h-12 rounded-full bg-brandCard border border-white/10 hover:border-pink-500 hover:text-pink-500 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" aria-label="TikTok" class="w-12 h-12 rounded-full bg-brandCard border border-white/10 hover:border-white hover:text-black hover:bg-white flex items-center justify-center text-lg transition-all transform hover:-translate-y-1">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="w-12 h-12 rounded-full bg-brandCard border border-white/10 hover:border-blue-500 hover:text-blue-500 flex items-center justify-center text-lg transition-all transform hover:-translate-y-1">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SINGLE DYNAMIC MODAL (Detalles Técnicos y de Preparación de Pizzas) -->
+    <div id="pizza-detail-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" onclick="closePizzaModal()">
+        <div class="bg-brandCard rounded-3xl p-6 max-w-lg w-full border border-brandRed/40 relative transform transition-all duration-300 scale-95 opacity-0" id="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closePizzaModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" aria-label="Cerrar ventana">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-image" src="" alt="" class="w-full h-56 object-cover rounded-2xl mb-6">
+            <h3 id="modal-title" class="text-2xl font-black text-brandYellow uppercase mb-2"></h3>
+            <div class="flex gap-4 items-center mb-4">
+                <span class="text-gray-400 text-xs uppercase font-bold">Precios:</span>
+                <span id="modal-price-entera" class="text-brandRed font-black text-lg"></span>
+                <span class="text-gray-500">|</span>
+                <span id="modal-price-mitad" class="text-brandYellow font-black text-lg"></span>
+            </div>
+            <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed mb-6"></p>
+            
+            <!-- Selector de tamaño rápido del modal -->
+            <div class="mb-6">
+                <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Selecciona Porción para Añadir:</label>
+                <div class="flex bg-brandDark p-1 rounded-xl border border-white/10">
+                    <button id="modal-opt-entera" onclick="setModalSelectedSize('entera')" class="flex-1 py-2 text-xs font-black rounded-lg transition-all">🍕 ENTERA</button>
+                    <button id="modal-opt-mitad" onclick="setModalSelectedSize('mitad')" class="flex-1 py-2 text-xs font-black rounded-lg transition-all">🌓 MITAD</button>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <button id="modal-add-button" class="flex-1 bg-brandYellow hover:bg-brandYellow/90 text-brandDark font-black py-3 rounded-xl text-center uppercase tracking-wider text-xs">
+                    <i class="fa-solid fa-cart-plus"></i> Agregar al Pedido
+                </button>
+                <a id="modal-direct-whatsapp" href="#" target="_blank" class="flex-1 bg-brandGreen text-brandDark font-black py-3 rounded-xl text-center uppercase tracking-wider text-xs flex items-center justify-center gap-1">
+                    <i class="fab fa-whatsapp"></i> Comprar Sola
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5493878232587?text=¡Hola%20Pizzería%20Bomba!%20Quiero%20hacer%20una%20consulta." 
+       target="_blank" 
+       aria-label="WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-brandGreen text-brandDark w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SYSTEM NOTIFICATION TOAST -->
+    <div id="toast-notif" class="fixed bottom-6 left-6 z-50 bg-brandYellow text-brandDark font-black px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-bomb text-xl animate-bounce text-brandRed"></i>
+        <span id="toast-message">Notificación del sistema.</span>
+    </div>
+
+    <!-- SCRIPTS DE INTERACCIÓN Y CARRO DINÁMICO -->
+    <script>
+        // =========================================================================
+        // === CONFIGURACIÓN GLOBAL DE PRECIOS Y PRODUCTOS (EDITA AQUÍ FÁCILMENTE) ===
+        // =========================================================================
+        // Solo edita los valores en este objeto. La interfaz web, los modales y el
+        // carro de compras se adaptarán al instante de forma dinámica y automática.
+        const PIZZAS_CONFIG = {
+            muzza: {
+                id: 'muzza',
+                name: "Muzza Megabomba",
+                priceEntera: 12500, // Precio para Pizza Entera (La mitad costará el 50%)
+                desc: "Doble muzzarella hilada, salsa natural de tomates cosechados, aceitunas negras gigantes y chimichurri secreto de la casa.",
+                img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500",
+                badge: "Popular 🌟"
+            },
+            pepperoni: {
+                id: 'pepperoni',
+                name: "Pepperoni TNT",
+                priceEntera: 14900,
+                desc: "Lluvia colosal de Pepperoni crocante, base de cuatro quesos fundidos, jalapeños seleccionados y aceite picante especial.",
+                img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=500",
+                badge: "Picante 🔥"
+            },
+            fugazzeta: {
+                id: 'fugazzeta',
+                name: "Fugazzeta Atómica",
+                priceEntera: 13800,
+                desc: "Cebollas maceradas al oliva, centro fundido de queso cuartirolo extra cremoso, provolone rallado y orégano fresco.",
+                img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=500",
+                badge: "La Favorita"
+            },
+            calabresa: {
+                id: 'calabresa',
+                name: "Calabresa Detonante",
+                priceEntera: 15200,
+                desc: "Longaniza calabresa artesanal ahumada de primera, muzzarella hilada, morrones asados y toque sutil de pimentón dulce.",
+                img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=500",
+                badge: "Intensa 🍕"
+            },
+            napolitana: {
+                id: 'napolitana',
+                name: "Napolitana Atómica",
+                priceEntera: 14100,
+                desc: "Finas rodajas de tomate natural marinado en ajo fresco y perejil, abundante queso provolone rayado, muzzarella y albahaca.",
+                img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=500",
+                badge: "Fresca 🌿"
+            },
+            especial: {
+                id: 'especial',
+                name: "Especial Bomba",
+                priceEntera: 16000,
+                desc: "Masa estirada a mano, base de muzzarella, jamón cocido ahumado natural, tiras de morrón asado, huevos duros rayados y aceitunas.",
+                img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=500",
+                badge: "De la Casa 💣"
+            }
+        };
+
+        // Estado del Carrito y Selección de tamaño de tarjeta en memoria local
+        let cart = [];
+        let cardsSelectedSizes = {}; // Guarda qué tamaño ('entera' o 'mitad') está seleccionado en cada tarjeta
+        let modalActiveSize = 'entera'; // Estado de porción seleccionada dentro del Modal activo
+        let modalActivePizzaKey = null; // Llave de la pizza abierta en el modal
+
+        // Formateador local de moneda (Pesos Argentinos)
+        const currencyFormatter = new Intl.NumberFormat('es-AR', {
+            style: 'currency',
+            currency: 'ARS',
+            maximumFractionDigits: 0
+        });
+
+        // Inicializa los tamaños por defecto para todas las tarjetas
+        function initCardSizes() {
+            Object.keys(PIZZAS_CONFIG).forEach(key => {
+                cardsSelectedSizes[key] = 'entera';
+            });
+        }
+
+        // Renderiza el catálogo de forma dinámica desde el objeto central
+        function renderPizzasMenu() {
+            const grid = document.getElementById('pizzas-menu-grid');
+            grid.innerHTML = '';
+
+            Object.keys(PIZZAS_CONFIG).forEach(key => {
+                const pizza = PIZZAS_CONFIG[key];
+                const selectedSize = cardsSelectedSizes[key];
+                
+                // Calcula precios en base al tamaño elegido en la tarjeta
+                const currentPrice = selectedSize === 'entera' ? pizza.priceEntera : Math.round(pizza.priceEntera / 2);
+
+                const cardHTML = `
+                    <div class="bg-brandCard rounded-3xl p-6 border border-white/5 hover:border-brandRed/50 transition-all duration-500 transform hover:-translate-y-2 flex flex-col justify-between group cursor-pointer"
+                         onclick="openPizzaModal('${key}')">
+                        <div>
+                            <div class="relative overflow-hidden rounded-2xl aspect-square mb-6">
+                                <img src="${pizza.img}" 
+                                     alt="${pizza.name}" 
+                                     class="w-full h-full object-cover rounded-2xl transition-transform duration-1000 ease-out group-hover:rotate-180 group-hover:scale-110">
+                                <div class="absolute top-4 right-4 bg-brandRed text-white text-xs font-black px-3 py-1.5 rounded-full uppercase tracking-wider">
+                                    ${pizza.badge}
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between items-start mb-3 gap-2">
+                                <h3 class="text-xl font-bold group-hover:text-brandYellow transition-colors">${pizza.name}</h3>
+                                <span class="text-brandYellow font-black text-xl whitespace-nowrap" id="price-display-${key}">
+                                    ${currencyFormatter.format(currentPrice)}
+                                </span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-6">${pizza.desc}</p>
+                        </div>
+
+                        <div class="space-y-4" onclick="event.stopPropagation()">
+                            <!-- Control Selector: Entera vs Mitad -->
+                            <div>
+                                <label class="block text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1.5">Tamaño de Porción:</label>
+                                <div class="flex bg-brandDark p-1 rounded-xl border border-white/5">
+                                    <button onclick="setCardSize('${key}', 'entera')" id="btn-size-entera-${key}" 
+                                            class="flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedSize === 'entera' ? 'bg-brandRed text-white' : 'text-gray-400 hover:text-white'}">
+                                        🍕 Entera
+                                    </button>
+                                    <button onclick="setCardSize('${key}', 'mitad')" id="btn-size-mitad-${key}" 
+                                            class="flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${selectedSize === 'mitad' ? 'bg-brandYellow text-brandDark' : 'text-gray-400 hover:text-white'}">
+                                        🌓 Mitad
+                                    </button>
+                                </div>
+                            </div>
+
+                            <button onclick="addSelectedToCart('${key}')" class="w-full bg-brandRed hover:bg-brandRed/85 text-white font-black py-3 rounded-xl uppercase tracking-wider text-xs flex items-center justify-center gap-2 transform active:scale-95">
+                                <i class="fa-solid fa-plus"></i> Agregar al Pedido
+                            </button>
+                            <div class="text-center text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-brandYellow transition-colors">
+                                Ver detalles de cocción <i class="fa-solid fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        // Cambiar el tamaño seleccionado en la tarjeta principal
+        function setCardSize(key, size) {
+            cardsSelectedSizes[key] = size;
+            const pizza = PIZZAS_CONFIG[key];
+            const currentPrice = size === 'entera' ? pizza.priceEntera : Math.round(pizza.priceEntera / 2);
+            
+            // Actualizar el precio visible
+            document.getElementById(`price-display-${key}`).innerText = currencyFormatter.format(currentPrice);
+
+            // Actualizar botones de la tarjeta
+            const btnEntera = document.getElementById(`btn-size-entera-${key}`);
+            const btnMitad = document.getElementById(`btn-size-mitad-${key}`);
+
+            if (size === 'entera') {
+                btnEntera.className = "flex-1 py-1.5 text-xs font-bold rounded-lg transition-all bg-brandRed text-white";
+                btnMitad.className = "flex-1 py-1.5 text-xs font-bold rounded-lg transition-all text-gray-400 hover:text-white";
+            } else {
+                btnEntera.className = "flex-1 py-1.5 text-xs font-bold rounded-lg transition-all text-gray-400 hover:text-white";
+                btnMitad.className = "flex-1 py-1.5 text-xs font-bold rounded-lg transition-all bg-brandYellow text-brandDark";
+            }
+        }
+
+        // Agregar Pizza seleccionada desde la tarjeta al Carro
+        function addSelectedToCart(key) {
+            const size = cardsSelectedSizes[key];
+            addPizzaToCart(key, size);
+        }
+
+        // Añadir pizza al carrito especificando porción
+        function addPizzaToCart(pizzaKey, size) {
+            const pizza = PIZZAS_CONFIG[pizzaKey];
+            if (!pizza) return;
+
+            const unitPrice = size === 'entera' ? pizza.priceEntera : Math.round(pizza.priceEntera / 2);
+            const cartItemId = `${pizzaKey}-${size}`; // Identificador único compuesto para diferenciar porciones
+
+            const existingItem = cart.find(item => item.id === cartItemId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({
+                    id: cartItemId,
+                    key: pizzaKey,
+                    name: pizza.name,
+                    size: size,
+                    price: unitPrice,
+                    qty: 1
+                });
+            }
+
+            renderCart();
+            showToast(`🔥 Se agregó ${pizza.name} (${size === 'entera' ? 'Entera' : 'Mitad'}) a tu pedido.`);
+        }
+
+        // Remover ítem del carrito
+        function removeFromCart(cartItemId) {
+            cart = cart.filter(item => item.id !== cartItemId);
+            renderCart();
+            showToast("⚠️ Se eliminó el producto del carrito.");
+        }
+
+        // Modificar cantidad desde el carrito (+1 / -1)
+        function changeQty(cartItemId, delta) {
+            const item = cart.find(item => item.id === cartItemId);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                removeFromCart(cartItemId);
+            } else {
+                renderCart();
+            }
+        }
+
+        // Vaciar el carrito de forma completa
+        function clearCart() {
+            cart = [];
+            renderCart();
+            showToast("🗑️ Vaciaste tu pedido.");
+        }
+
+        // Renderizar elementos del Carrito
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const footer = document.getElementById('cart-footer');
+            const navBadge = document.getElementById('nav-cart-badge');
+            const mobileBadge = document.getElementById('mobile-cart-badge');
+
+            let totalQty = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 space-y-4">
+                        <i class="fa-solid fa-basket-shopping text-5xl text-brandRed/30 block"></i>
+                        <p class="text-lg font-bold">Tu pedido de pizzas está vacío.</p>
+                        <p class="text-sm">Explora las variedades de arriba, elige tamaño y agrégalas a tu mesa para comprarlas.</p>
+                        <a href="#menu" class="inline-block bg-brandRed/10 border border-brandRed text-brandRed hover:bg-brandRed hover:text-white px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all">Ver Menú de Pizzas</a>
+                    </div>
+                `;
+                footer.classList.add('hidden');
+                navBadge.classList.add('hidden');
+                mobileBadge.classList.add('hidden');
+                return;
+            }
+
+            footer.classList.remove('hidden');
+            container.innerHTML = '';
+
+            cart.forEach(item => {
+                totalQty += item.qty;
+                totalPrice += (item.price * item.qty);
+
+                const itemRow = document.createElement('div');
+                itemRow.className = 'flex flex-col sm:flex-row justify-between items-center bg-brandDark/60 p-4 rounded-2xl border border-white/5 gap-4';
+                itemRow.innerHTML = `
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                        <div class="bg-brandRed/20 w-12 h-12 rounded-xl flex items-center justify-center text-lg">
+                            ${item.size === 'entera' ? '🍕' : '🌓'}
+                        </div>
+                        <div class="text-left">
+                            <h4 class="font-bold text-white text-sm md:text-base">${item.name}</h4>
+                            <div class="flex items-center gap-2">
+                                <span class="bg-brandCard text-[10px] text-brandYellow px-2 py-0.5 rounded-full font-black uppercase">
+                                    ${item.size === 'entera' ? 'Pizza Entera' : 'Media Pizza'}
+                                </span>
+                                <span class="text-xs text-gray-400">${currencyFormatter.format(item.price)} c/u</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
+                        <!-- Control de cantidad -->
+                        <div class="flex items-center gap-2 bg-brandCard border border-white/10 rounded-xl px-2 py-1">
+                            <button onclick="changeQty('${item.id}', -1)" class="w-8 h-8 rounded-lg bg-brandDark/50 hover:bg-brandRed hover:text-white flex items-center justify-center text-xs font-bold transition-all">-</button>
+                            <span class="font-mono font-bold text-sm px-2">${item.qty}</span>
+                            <button onclick="changeQty('${item.id}', 1)" class="w-8 h-8 rounded-lg bg-brandDark/50 hover:bg-brandRed hover:text-white flex items-center justify-center text-xs font-bold transition-all">+</button>
+                        </div>
+
+                        <!-- Subtotal e Icono eliminar -->
+                        <div class="flex items-center gap-4">
+                            <span class="font-mono font-black text-brandYellow text-sm md:text-base">${currencyFormatter.format(item.price * item.qty)}</span>
+                            <button onclick="removeFromCart('${item.id}')" class="text-gray-500 hover:text-brandRed transition-all">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(itemRow);
+            });
+
+            document.getElementById('cart-total-qty').innerText = `${totalQty} Pizza${totalQty > 1 ? 's' : ''}`;
+            document.getElementById('cart-total-price').innerText = currencyFormatter.format(totalPrice);
+
+            // Actualizar insignias de cabecera
+            navBadge.innerText = totalQty;
+            navBadge.classList.remove('hidden');
+            mobileBadge.innerText = totalQty;
+            mobileBadge.classList.remove('hidden');
+        }
+
+        // Compilar pedido consolidado y redirigir a la API de WhatsApp
+        function sendOrderViaWhatsApp() {
+            if (cart.length === 0) return;
+
+            let message = `¡Hola PI-ZZERIA BOMBA! 💥\nQuiero hacer un pedido desde la Web Oficial:\n\n`;
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.qty;
+                totalPrice += subtotal;
+                const portionLabel = item.size === 'entera' ? 'Entera' : 'Mitad';
+                message += `${index + 1}. 🍕 *${item.name}* (${portionLabel}) x${item.qty} -> _${currencyFormatter.format(subtotal)}_\n`;
+            });
+
+            message += `\n💰 *Total del Pedido:* ${currencyFormatter.format(totalPrice)}`;
+            message += `\n📍 *Búnker de Retiro:* Pichanal (Belgrano y Balcarce)\n💬 _Por favor, indíquenme el tiempo de demora estimado. ¡Muchas gracias!_`;
+
+            const encodedMessage = encodeURIComponent(message);
+            // Redirección oficial al número de Salta (+54 9 3878 23-2587)
+            window.open(`https://wa.me/5493878232587?text=${encodedMessage}`, '_blank');
+        }
+
+        // Abrir Modal de forma Dinámica con los datos unificados
+        function openPizzaModal(pizzaKey) {
+            modalActivePizzaKey = pizzaKey;
+            const pizza = PIZZAS_CONFIG[pizzaKey];
+            if (!pizza) return;
+
+            // Obtener el tamaño por defecto de la tarjeta para replicarlo en el modal
+            modalActiveSize = cardsSelectedSizes[pizzaKey];
+
+            // Rellenar modal con datos reales
+            document.getElementById('modal-image').src = pizza.img;
+            document.getElementById('modal-image').alt = pizza.name;
+            document.getElementById('modal-title').innerText = pizza.name;
+            document.getElementById('modal-price-entera').innerText = `🍕 Entera: ${currencyFormatter.format(pizza.priceEntera)}`;
+            document.getElementById('modal-price-mitad').innerText = `🌓 Mitad: ${currencyFormatter.format(Math.round(pizza.priceEntera / 2))}`;
+            document.getElementById('modal-desc').innerText = pizza.desc;
+
+            // Vincular compra directa individual para este modal
+            updateModalDirectWhatsApp(pizzaKey);
+
+            // Refrescar selector de porción del modal
+            setModalSelectedSize(modalActiveSize);
+
+            // Configurar botón del modal
+            const addButton = document.getElementById('modal-add-button');
+            addButton.onclick = function() {
+                addPizzaToCart(pizzaKey, modalActiveSize);
+                closePizzaModal();
+            };
+
+            // Mostrar modal con animación suave
+            const modal = document.getElementById('pizza-detail-modal');
+            const content = document.getElementById('modal-content');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 50);
+        }
+
+        // Modificar selección de porción dentro del modal activo
+        function setModalSelectedSize(size) {
+            modalActiveSize = size;
+            
+            const btnEntera = document.getElementById('modal-opt-entera');
+            const btnMitad = document.getElementById('modal-opt-mitad');
+
+            if (size === 'entera') {
+                btnEntera.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-brandRed text-white";
+                btnMitad.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all text-gray-400 hover:text-white";
+            } else {
+                btnEntera.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all text-gray-400 hover:text-white";
+                btnMitad.className = "flex-1 py-2 text-xs font-black rounded-lg transition-all bg-brandYellow text-brandDark";
+            }
+
+            // Actualizar enlace directo del modal al cambiar tamaño
+            updateModalDirectWhatsApp(modalActivePizzaKey);
+        }
+
+        // Actualizar el enlace del botón de compra sola del modal
+        function updateModalDirectWhatsApp(pizzaKey) {
+            const pizza = PIZZAS_CONFIG[pizzaKey];
+            const sizeLabel = modalActiveSize === 'entera' ? 'Entera' : 'Mitad';
+            const price = modalActiveSize === 'entera' ? pizza.priceEntera : Math.round(pizza.priceEntera / 2);
+            
+            const msg = `¡Hola! Quiero ordenar una pizza de sabor único:\n🍕 *${pizza.name}* (${sizeLabel}) por un valor de ${currencyFormatter.format(price)}.`;
+            document.getElementById('modal-direct-whatsapp').href = `https://wa.me/5493878232587?text=${encodeURIComponent(msg)}`;
+        }
+
+        // Cerrar ventana modal
+        function closePizzaModal() {
+            const modal = document.getElementById('pizza-detail-modal');
+            const content = document.getElementById('modal-content');
+            if (modal && content) {
+                content.classList.remove('scale-100', 'opacity-100');
+                content.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // Detonar animación divertida del hero
+        function detonateHeroPizza() {
+            showToast("💥 ¡BOOOM! Detonaste una explosión de sabor.");
+            const pizzaHero = document.getElementById('hero-pizza');
+            pizzaHero.style.transform = 'scale(1.15) rotate(360deg)';
+            setTimeout(() => {
+                pizzaHero.style.transform = 'scale(1) rotate(0deg)';
+            }, 1000);
+        }
+
+        // Visualización de Toasts flotantes para alertas
+        function showToast(message) {
+            const toast = document.getElementById('toast-notif');
+            document.getElementById('toast-message').innerText = message;
+            
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Escuchar teclado para cerrar ventanas emergentes
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePizzaModal();
+            }
+        });
+
+        // Al iniciar la página
+        window.onload = function() {
+            initCardSizes();
+            renderPizzasMenu();
+            renderCart();
+        };
+    </script>
+</body>
+</html>

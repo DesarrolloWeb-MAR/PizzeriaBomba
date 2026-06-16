@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PI-ZZERIA MUNDIAL | El Sabor que Detona tu Paladar</title>
+    <title>PI-ZZERIA MUNDIAL | Delivery de Pizzas en Pichanal</title>
     
     <!-- Tailwind CSS para Estilos Modernos y Rápidos -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -88,18 +88,17 @@
                 <span class="inline-block w-2 h-2 rounded-full bg-brandRed animate-pulse"></span> Tu Pedido
                 <span id="nav-cart-badge" class="hidden bg-brandRed text-white text-[10px] px-1.5 py-0.5 rounded-full font-black">0</span>
             </a>
-            <a href="#ubicacion" class="hover:text-brandYellow transition-colors">Búnker</a>
         </nav>
         <div class="flex items-center gap-3">
             <a href="#tu-pedido" class="relative bg-brandCard border border-brandRed/30 hover:border-brandRed text-white p-2.5 rounded-xl md:hidden">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span id="mobile-cart-badge" class="hidden absolute -top-1.5 -right-1.5 bg-brandRed text-white text-[9px] px-1.5 py-0.5 rounded-full font-black">0</span>
             </a>
-            <a href="https://wa.me/5493878232587?text=¡Hola!%20Quiero%20pedir%20la%20pizza%20más%20mundial." 
+            <a href="https://wa.me/5493878232587?text=¡Hola!%20Quiero%20consultar%20por%20un%20delivery%20de%20pizzas." 
                target="_blank" 
                class="bg-brandGreen hover:bg-brandGreen/90 text-brandDark font-black px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm shadow-lg shadow-brandGreen/20 transform hover:scale-105 active:scale-95">
                 <i class="fab fa-whatsapp text-lg"></i>
-                <span class="hidden sm:inline">PIDE AL TOQUE</span>
+                <span class="hidden sm:inline">CONSULTAS</span>
             </a>
         </div>
     </header>
@@ -113,16 +112,16 @@
             <!-- Textos del Hero -->
             <div class="space-y-6 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 bg-brandRed/20 border border-brandRed/40 px-4 py-2 rounded-full text-brandYellow font-extrabold text-xs tracking-widest uppercase">
-                    <i class="fa-solid fa-fire animate-bounce"></i> ¡El sabor de Pichanal que rompe esquemas!
+                    <i class="fa-solid fa-truck animate-bounce"></i> ¡Exclusivo Delivery en Pichanal!
                 </div>
                 <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-none uppercase">
-                    EL SABOR QUE <br>
+                    UN SABOR DE <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandRed via-brandYellow to-brandRed font-explosive text-3xl sm:text-5xl lg:text-6xl block mt-2">
-                        DETONA!
+                        CLASE MUNDIAL!
                     </span>
                 </h1>
                 <p class="text-gray-400 text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                    Artesanales a la piedra, desbordantes de queso y con combinaciones explosivas que desafían la gravedad. Selecciona tu variedad preferida en tamaño entero o por mitades y realiza tu pedido al instante.
+                    Pizzas artesanales preparadas con masa a la piedra, desbordantes de queso y llevadas directamente a la puerta de tu casa. Selecciona tus variedades preferidas en tamaño entero o por mitades y haz tu pedido de delivery al instante.
                 </p>
                 <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
                     <a href="#menu" class="bg-brandRed hover:bg-brandRed/95 text-white font-black px-8 py-4 rounded-xl text-md tracking-wider uppercase shadow-xl shadow-brandRed/30 transform hover:scale-105 active:scale-95">
@@ -154,8 +153,8 @@
     <section id="menu" class="py-24 bg-brandGray/40 relative border-t border-b border-brandRed/20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center space-y-4 mb-16">
-                <h2 class="text-3xl md:text-5xl font-black uppercase">Especialidades <span class="text-brandRed">MUNDIALISTAS</span></h2>
-                <p class="text-gray-400 max-w-xl mx-auto">Elige entre una pizza entera o media pizza de cualquiera de nuestras variedades e infórmanos de tu pedido.</p>
+                <h2 class="text-3xl md:text-5xl font-black uppercase">Especialidades <span class="text-brandRed">MUNDIAL</span></h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Elige entre una pizza entera o media pizza de cualquiera de nuestras variedades y te la enviamos volando.</p>
             </div>
 
             <!-- Contenedor dinámico donde JS renderizará todas las tarjetas de pizzas -->
@@ -174,21 +173,50 @@
                 <div class="inline-block bg-brandYellow/15 border border-brandYellow/30 text-brandYellow font-black px-4 py-2 rounded-full text-xs uppercase tracking-widest">
                     <i class="fa-solid fa-cart-shopping mr-1"></i> Pedido Actual en Tiempo Real
                 </div>
-                <h2 class="text-3xl md:text-5xl font-black uppercase">RESUMEN DE TU <span class="text-brandYellow">DETONACIÓN</span></h2>
+                <h2 class="text-3xl md:text-5xl font-black uppercase">RESUMEN DE TU <span class="text-brandYellow">PEDIDO</span></h2>
                 <p class="text-gray-400 max-w-xl mx-auto">
-                    Revisa las pizzas seleccionadas, edita unidades o elimina items antes de confirmar tu pedido oficial.
+                    Revisa las pizzas seleccionadas, completa tus datos para el delivery y envía tu pedido por WhatsApp.
                 </p>
             </div>
 
             <!-- Contenedor Principal del Carrito de Compras -->
-            <div class="bg-brandCard rounded-3xl border border-white/5 p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+            <div class="bg-brandCard rounded-3xl border border-white/5 p-6 md:p-8 backdrop-blur-xl shadow-2xl space-y-6">
                 <!-- Items del Carrito -->
                 <div id="cart-items-container" class="space-y-4 max-h-[400px] overflow-y-auto pr-2 no-scrollbar">
                     <!-- Relleno dinámico a través de script.js -->
                 </div>
 
+                <!-- FORMULARIO DE DELIVERY (Aparece dinámicamente cuando hay productos) -->
+                <div id="delivery-info-form" class="hidden border-t border-white/10 pt-6 space-y-4">
+                    <h3 class="text-md font-black text-brandYellow uppercase tracking-wider flex items-center gap-2">
+                        <i class="fa-solid fa-truck-fast"></i> Datos obligatorios para el Envío
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="customer-name" class="block text-xs font-bold text-gray-400 uppercase mb-1.5">Tu Nombre:</label>
+                            <input type="text" id="customer-name" placeholder="Ej: Juan Pérez" class="w-full bg-brandDark border border-white/10 focus:border-brandRed text-white px-4 py-3 rounded-xl text-sm outline-none transition-all focus:ring-1 focus:ring-brandRed">
+                        </div>
+                        <div>
+                            <label for="delivery-address" class="block text-xs font-bold text-gray-400 uppercase mb-1.5">Dirección de Entrega * :</label>
+                            <input type="text" id="delivery-address" placeholder="Ej: Calle San Martín 450, Barrio El Progreso" class="w-full bg-brandDark border border-white/10 focus:border-brandRed text-white px-4 py-3 rounded-xl text-sm outline-none transition-all focus:ring-1 focus:ring-brandRed" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="delivery-notes" class="block text-xs font-bold text-gray-400 uppercase mb-1.5">Indicaciones de entrega / Referencias (Opcional):</label>
+                        <input type="text" id="delivery-notes" placeholder="Ej: Portón de madera, frente al kiosco, timbre dañado" class="w-full bg-brandDark border border-white/10 focus:border-brandRed text-white px-4 py-3 rounded-xl text-sm outline-none transition-all focus:ring-1 focus:ring-brandRed">
+                    </div>
+                    <div class="bg-brandDark/40 p-4 rounded-xl border border-white/5 space-y-2 text-xs text-gray-400">
+                        <p class="flex items-center gap-2 font-black text-brandYellow uppercase text-[11px]">
+                            <i class="fa-solid fa-location-crosshairs text-brandYellow text-sm"></i> ¡Ubicación Satelital Requerida!
+                        </p>
+                        <p>
+                            Para garantizar una entrega sumamente ágil de tus pizzas calientes, una vez que presiones el botón de abajo y se abra la app de WhatsApp, <strong>recordá adjuntar tu ubicación actual en tiempo real (GPS)</strong> en nuestra conversación.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Resumen y Acción de Envío a WhatsApp -->
-                <div id="cart-footer" class="hidden border-t border-white/10 mt-8 pt-6 space-y-6">
+                <div id="cart-footer" class="hidden border-t border-white/10 pt-6 space-y-6">
                     <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                         <div class="text-center sm:text-left">
                             <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">VARIEDAD EN TU MESA:</span>
@@ -213,64 +241,14 @@
         </div>
     </section>
 
-    <!-- LOCATION SECTION -->
-    <section id="ubicacion" class="py-24 bg-brandGray/40 relative px-6 border-t border-brandRed/20">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div class="lg:col-span-5 space-y-6">
-                <div class="inline-flex items-center gap-2 bg-brandYellow/15 border border-brandYellow/30 px-4 py-2 rounded-full text-brandYellow font-bold text-xs tracking-widest uppercase">
-                    <i class="fa-solid fa-map-location-dot"></i> Búnker de Sabor
-                </div>
-                <h2 class="text-3xl md:text-5xl font-black uppercase">¡VISITA EL BUNKER EN <span class="text-brandRed">PICHANAL!</span></h2>
-                <p class="text-gray-400 leading-relaxed">
-                    Ven a retirar tus pizzas recién horneadas o disfruta de un ambiente inigualable en nuestro salón temático del norte argentino.
-                </p>
-                
-                <div class="space-y-4 pt-2">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-brandRed/10 p-3.5 rounded-xl border border-brandRed/30 text-brandRed">
-                            <i class="fa-solid fa-location-dot text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Dirección de Retiro</h4>
-                            <p class="text-gray-400 text-sm">Av. Belgrano esq. Balcarce, Pichanal, Argentina</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="bg-brandYellow/10 p-3.5 rounded-xl border border-brandYellow/30 text-brandYellow">
-                            <i class="fa-solid fa-clock text-lg"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg text-white">Horarios de Atención</h4>
-                            <p class="text-gray-400 text-sm">Martes a Domingos de 19:00 a 01:00 hs (Viernes/Sábados hasta 02:00 hs)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-4">
-                    <a href="https://maps.google.com/?q=Av.+Belgrano+y+Balcarce,+Salta,+Argentina" target="_blank" 
-                       class="inline-flex items-center gap-2.5 bg-brandYellow hover:bg-brandYellow/90 text-brandDark font-black px-6 py-3.5 rounded-xl text-sm tracking-wider uppercase shadow-lg shadow-brandYellow/10 transition-all transform hover:scale-105 active:scale-95">
-                        <i class="fa-solid fa-route text-lg"></i> CÓMO LLEGAR EN GOOGLE MAPS
-                    </a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-7 rounded-3xl overflow-hidden border-2 border-brandRed/30 shadow-[0_0_40px_rgba(255,60,0,0.15)] h-[400px]">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.3854131580235!2d-65.41243742465983!3d-24.782245311815307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3b0a2948dbd%3A0xc6cb1c7df5d45ebf!2sAv.%20Belgrano%20%26%20Balcarce%2C%20Salta!5e0!3m2!1ses-419!2sar!4v1710000000000!5m2!1ses-419!2sar" 
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer class="bg-brandDark border-t border-white/5 py-16 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
             
             <div class="text-center md:text-left space-y-2">
                 <span class="font-explosive text-lg text-brandRed tracking-tighter">PI-ZZERIA <span class="text-brandYellow">MUNDIAL</span></span>
-                <p class="text-gray-500 text-sm">&copy; 2026 PI-ZZERIA MUNDIAL. Todos los derechos reservados.</p>
+                <p class="text-gray-400 text-sm">🚚 Servicio exclusivo de delivery en Pichanal, Salta, Argentina.</p>
+                <p class="text-gray-500 text-xs">&copy; 2026 PI-ZZERIA MUNDIAL. Todos los derechos reservados.</p>
             </div>
 
             <!-- Botones de Redes Sociales -->
@@ -289,7 +267,7 @@
         </div>
     </footer>
 
-    <!-- SINGLE DYNAMIC MODAL (Detalles Técnicos y de Preparación de Pizzas) -->
+    <!-- SINGLE DYNAMIC MODAL (Detalles de las Pizzas) -->
     <div id="pizza-detail-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4" onclick="closePizzaModal()">
         <div class="bg-brandCard rounded-3xl p-6 max-w-lg w-full border border-brandRed/40 relative transform transition-all duration-300 scale-95 opacity-0" id="modal-content" onclick="event.stopPropagation()">
             <button onclick="closePizzaModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl" aria-label="Cerrar ventana">
@@ -326,7 +304,7 @@
     </div>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/5493878232587?text=¡Hola%20Pizzería%20Mundial!%20Quiero%20hacer%20una%20consulta." 
+    <a href="https://wa.me/5493878232587?text=¡Hola%20Pizzería%20Mundial!%20Quiero%20consultar%20por%20un%20envío%20de%20pizzas." 
        target="_blank" 
        aria-label="WhatsApp"
        class="fixed bottom-6 right-6 z-50 bg-brandGreen text-brandDark w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 active:scale-95 transition-all">
@@ -335,7 +313,7 @@
 
     <!-- SYSTEM NOTIFICATION TOAST -->
     <div id="toast-notif" class="fixed bottom-6 left-6 z-50 bg-brandYellow text-brandDark font-black px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300">
-        <i class="fa-solid fa-bomb text-xl animate-bounce text-brandRed"></i>
+        <i class="fa-solid fa-pizza-slice text-xl animate-bounce text-brandRed"></i>
         <span id="toast-message">Notificación del sistema.</span>
     </div>
 
@@ -344,14 +322,12 @@
         // =========================================================================
         // === CONFIGURACIÓN GLOBAL DE PRECIOS Y PRODUCTOS (EDITA AQUÍ FÁCILMENTE) ===
         // =========================================================================
-        // Solo edita los valores en este objeto. La interfaz web, los modales y el
-        // carro de compras se adaptarán al instante de forma dinámica y automática.
         const PIZZAS_CONFIG = {
             muzza: {
                 id: 'muzza',
                 name: "Muzzarella Clásica",
                 priceEntera: 8000, // Precio para Pizza Entera (La mitad costará el 50%)
-                desc: "Doble muzzarella hilada premium, salsa natural de tomates cosechados, aceitunas negras gigantes y chimichurri secreto de la casa.",
+                desc: "Doble muzzarella hilada premium, salsa de tomates seleccionados, aceitunas negras gigantes y el toque clásico de orégano.",
                 img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=500",
                 badge: "La más pedida 🌟"
             },
@@ -359,15 +335,15 @@
                 id: 'calabresa',
                 name: "Calabresa",
                 priceEntera: 10000,
-                desc: "Longaniza calabresa artesanal ahumada de primera, muzzarella hilada, morrones asados y toque sutil de pimentón dulce.",
+                desc: "Longaniza calabresa artesanal ahumada, muzzarella de primera, morrones asados y un toque sutil de pimentón dulce.",
                 img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=500",
-                badge: "Intensa 🍕"
+                badge: "Tradicional 🍕"
             },
             napolitana: {
                 id: 'napolitana',
                 name: "Napolitana",
                 priceEntera: 10000,
-                desc: "Finas rodajas de tomate natural marinado en ajo fresco y perejil, abundante queso provolone rayado, muzzarella y albahaca.",
+                desc: "Finas rodajas de tomate natural fresco marinado en ajo y perejil, abundante queso provolone rallado y hojas de albahaca.",
                 img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=500",
                 badge: "Fresca 🌿"
             },
@@ -375,9 +351,9 @@
                 id: 'jamon_morron',
                 name: "Jamón y Morrón",
                 priceEntera: 10000,
-                desc: "Masa estirada a mano, base de muzzarella, jamón cocido ahumado natural, tiras de morrón asado, huevos duros rayados y aceitunas.",
-                img: "https://laalemanacomidas.com.ar/wp-content/uploads/2020/04/4I4TBI4E35D3BPWNGMVZ6ZRJMY.jpg",
-                badge: "De la Casa 💣"
+                desc: "Base de muzzarella, jamón cocido seleccionado de calidad, tiras de morrones asados al natural y aceitunas verdes.",
+                img: "https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=500",
+                badge: "Especial 🌟"
             }
         };
 
@@ -455,7 +431,7 @@
                                 <i class="fa-solid fa-plus"></i> Agregar al Pedido
                             </button>
                             <div class="text-center text-xs font-bold text-gray-500 uppercase tracking-wider group-hover:text-brandYellow transition-colors">
-                                Ver detalles de cocción <i class="fa-solid fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+                                Ver detalles de preparación <i class="fa-solid fa-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
                             </div>
                         </div>
                     </div>
@@ -515,7 +491,7 @@
             }
 
             renderCart();
-            showToast(`🔥 Se agregó ${pizza.name} (${size === 'entera' ? 'Entera' : 'Mitad'}) a tu pedido.`);
+            showToast(`🍕 Se agregó ${pizza.name} (${size === 'entera' ? 'Entera' : 'Mitad'}) a tu pedido.`);
         }
 
         // Remover ítem del carrito
@@ -551,6 +527,7 @@
             const footer = document.getElementById('cart-footer');
             const navBadge = document.getElementById('nav-cart-badge');
             const mobileBadge = document.getElementById('mobile-cart-badge');
+            const deliveryForm = document.getElementById('delivery-info-form');
 
             let totalQty = 0;
             let totalPrice = 0;
@@ -560,17 +537,19 @@
                     <div class="text-center py-12 text-gray-500 space-y-4">
                         <i class="fa-solid fa-basket-shopping text-5xl text-brandRed/30 block"></i>
                         <p class="text-lg font-bold">Tu pedido de pizzas está vacío.</p>
-                        <p class="text-sm">Explora las variedades de arriba, elige tamaño y agrégalas a tu mesa para comprarlas.</p>
+                        <p class="text-sm">Explora las variedades de arriba, elige tamaño y agrégalas para solicitar tu delivery.</p>
                         <a href="#menu" class="inline-block bg-brandRed/10 border border-brandRed text-brandRed hover:bg-brandRed hover:text-white px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider text-xs transition-all">Ver Menú de Pizzas</a>
                     </div>
                 `;
                 footer.classList.add('hidden');
                 navBadge.classList.add('hidden');
                 mobileBadge.classList.add('hidden');
+                deliveryForm.classList.add('hidden');
                 return;
             }
 
             footer.classList.remove('hidden');
+            deliveryForm.classList.remove('hidden');
             container.innerHTML = '';
 
             cart.forEach(item => {
@@ -625,11 +604,23 @@
             mobileBadge.classList.remove('hidden');
         }
 
-        // Compilar pedido consolidado y redirigir a la API de WhatsApp
+        // Compilar pedido consolidado con datos de delivery y redirigir a la API de WhatsApp
         function sendOrderViaWhatsApp() {
             if (cart.length === 0) return;
 
-            let message = `¡Hola PI-ZZERIA MUNDIAL! 💥\nQuiero hacer un pedido desde la Web Oficial:\n\n`;
+            // Capturar datos del delivery
+            const customerName = document.getElementById('customer-name').value.trim();
+            const deliveryAddress = document.getElementById('delivery-address').value.trim();
+            const deliveryNotes = document.getElementById('delivery-notes').value.trim();
+
+            // Validar que se haya ingresado la dirección
+            if (!deliveryAddress) {
+                showToast("❌ Por favor, ingresá una dirección para realizar el delivery.");
+                document.getElementById('delivery-address').focus();
+                return;
+            }
+
+            let message = `¡Hola PI-ZZERIA MUNDIAL! 🍕\nQuiero realizar un pedido de DELIVERY:\n\n`;
             let totalPrice = 0;
 
             cart.forEach((item, index) => {
@@ -639,8 +630,15 @@
                 message += `${index + 1}. 🍕 *${item.name}* (${portionLabel}) x${item.qty} -> _${currencyFormatter.format(subtotal)}_\n`;
             });
 
-            message += `\n💰 *Total del Pedido:* ${currencyFormatter.format(totalPrice)}`;
-            message += `\n📍 *Búnker de Retiro:* Pichanal (Belgrano y Balcarce)\n💬 _Por favor, indíquenme el tiempo de demora estimado. ¡Muchas gracias!_`;
+            message += `\n💰 *Total a Pagar:* ${currencyFormatter.format(totalPrice)}`;
+            message += `\n\n📋 *DATOS PARA EL DELIVERY:*`;
+            message += `\n👤 *Nombre:* ${customerName || 'No especificado'}`;
+            message += `\n📍 *Dirección de Entrega:* ${deliveryAddress}`;
+            if (deliveryNotes) {
+                message += `\n📝 *Referencias:* ${deliveryNotes}`;
+            }
+            message += `\n\n📌 *[A CONTINUACIÓN ADJUNTO MI UBICACIÓN EN TIEMPO REAL (GPS)]*`;
+            message += `\n\n_Por favor, confírmenme la recepción del pedido y el tiempo estimado de demora. ¡Muchas gracias!_`;
 
             const encodedMessage = encodeURIComponent(message);
             // Redirección oficial al número de Pichanal (+54 9 3878 23-2587)
@@ -714,7 +712,7 @@
             const sizeLabel = modalActiveSize === 'entera' ? 'Entera' : 'Mitad';
             const price = modalActiveSize === 'entera' ? pizza.priceEntera : Math.round(pizza.priceEntera / 2);
             
-            const msg = `¡Hola! Quiero ordenar una pizza de sabor único:\n🍕 *${pizza.name}* (${sizeLabel}) por un valor de ${currencyFormatter.format(price)}.`;
+            const msg = `¡Hola! Quiero ordenar una pizza de sabor único por Delivery:\n🍕 *${pizza.name}* (${sizeLabel}) por un valor de ${currencyFormatter.format(price)}.\n\n📍 Adjunto mi dirección de envío a continuación...`;
             document.getElementById('modal-direct-whatsapp').href = `https://wa.me/5493878232587?text=${encodeURIComponent(msg)}`;
         }
 
@@ -734,7 +732,7 @@
 
         // Detonar animación divertida del hero
         function detonateHeroPizza() {
-            showToast("💥 ¡BOOOM! Detonaste una explosión de sabor.");
+            showToast("🍕 ¡Sabor de Clase Mundial directo a tu casa!");
             const pizzaHero = document.getElementById('hero-pizza');
             pizzaHero.style.transform = 'scale(1.15) rotate(360deg)';
             setTimeout(() => {
